@@ -9,7 +9,7 @@ read hmd5
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
     	echo "Text read from file: $line"
-	OUTPUT="$(openssl $line -1 -salt salt)"
+	OUTPUT="$(openssl $line -1 -salt $salt)"
 	echo "${OUTPUT}"
 	
 	'if [OUTPUT = hmd5]; then
